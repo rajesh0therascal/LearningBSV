@@ -1,0 +1,26 @@
+compile steps using bluesim
+
+bsc -sim -g mkTb Tb.bsv
+
+linking steps using bluesim
+
+bsc -sim -e mkTb -o ./mkTb_bsim
+
+simulate steps
+
+./mkTb_bsim
+
+
+
+
+Generating verilog
+
+bsc -verilog -g mkTb Tb.bsv
+
+Linking for Verilog simulator
+
+bsc -verilog -e mkTb -o mkTb_vsim -vsim iverilog mkTb.v
+
+Verilog Simulation
+
+./mkTb_vsim
