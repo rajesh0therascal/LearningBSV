@@ -3,7 +3,7 @@ package NbiFullAdder;
 function Bit#(n) addN (Bit#(TSub#(n,1)) x, Bit#(TSub#(n,1)) y, Bit#(TSub#(n,1)) c_in );
 	Bit#(TSub#(n,1)) s;
 	Bit#(w) c ={0, c_in};
-	for(Integer i=0;i<valueOf(w)-1;i=i+1 )begin
+	for(Integer i=0;i<(valueOf(w))-1;i=i+1 )begin
 		let cs = full_adder(x[i],y[i],c[i]);
 		c[i+1] = cs[1];
 		s[i] = cs[0];
